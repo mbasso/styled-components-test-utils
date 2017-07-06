@@ -105,9 +105,9 @@ Here is the list of the available APIs. Please, note that in the examples we are
 
 ### toHaveStyleRule
 > expect(tree).toHaveStyleRule(selector, value)
-
+>
 > expect({ component, modifier, media }).toHaveStyleRule(selector, value)
-
+>
 > expect({ css, props, modifier, media }).toHaveStyleRule(selector, value)
 
 Asserts that `tree`, `component` or `css` has a rule `selector: value;`. You can also pass some additional parameters to test selectors and media queries, here is an example:
