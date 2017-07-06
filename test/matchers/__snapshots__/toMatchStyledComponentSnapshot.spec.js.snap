@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toMatchStyledComponentsSnapshot null 1`] = `null`;
+
+exports[`toMatchStyledComponentsSnapshot should work with enzyme mount 1`] = `
+<styled.section>
+  <section
+    className="sc-bdVaJa iATjrR"
+  >
+    Click here
+  </section>
+</styled.section>
+`;
+
+exports[`toMatchStyledComponentsSnapshot should work with enzyme shallow rendering 1`] = `
+<section
+  className="sc-bdVaJa iATjrR"
+>
+  Click here
+</section>
+`;
+
+exports[`toMatchStyledComponentsSnapshot should work with react-test-renderer 1`] = `
+<section
+  className="sc-bdVaJa iATjrR"
+>
+  Click here
+</section>
+`;

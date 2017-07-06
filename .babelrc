@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "flow",
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    [
+      "transform-decorators-legacy"
+    ],
+    [
+      "transform-es3-member-expression-literals"
+    ],
+    [
+      "transform-es3-property-literals"
+    ]
+  ]
+}

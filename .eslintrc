@@ -1,0 +1,54 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": "off",
+    "quotes": [
+      2,
+      "single"
+    ],
+    "strict": [
+      2,
+      "never"
+    ],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
+  },
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
+  "globals": {
+    "describe": false,
+    "test": false,
+    "expect": false,
+    "jasmine": false,
+    "it": false,
+    "before": false,
+    "beforeEach": false,
+    "beforeAll": false,
+    "after": false,
+    "afterEach": false
+  },
+  "extends": [
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "airbnb"
+  ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
+}
