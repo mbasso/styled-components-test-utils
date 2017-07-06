@@ -46,7 +46,7 @@ npm install --save-dev react-test-renderer
 and following one of these: [Jest](#jest), [Expect](#expect), [Chai](#chai), [Jasmine](#jasmine)
 
 ### Jest
-To use styled-components-test-utils with jest, you have simply have to import the following:
+To use styled-components-test-utils with jest, you simply have to import the following:
 
 ```js
 import 'styled-components-test-utils/lib/jest';
@@ -61,7 +61,7 @@ To use styled-components-test-utils with expect, you have to do the following:
 
 ```js
 import expect from 'expect';
-import injectStyledUtils from 'styled-components-test-utils/lib/jasmine';
+import injectStyledUtils from 'styled-components-test-utils/lib/expect';
 
 injectStyledUtils(expect);
 
@@ -71,7 +71,7 @@ expect(component).toHaveStyleRule(property, value);
 ```
 
 ### Chai
-To use styled-components-test-utils with chai, you have simply have to import the following:
+To use styled-components-test-utils with chai, you simply have to import the following:
 
 ```js
 import 'styled-components-test-utils/lib/chai';
@@ -105,7 +105,9 @@ Here is the list of the available APIs. Please, note that in the examples we are
 
 ### toHaveStyleRule
 > expect(tree).toHaveStyleRule(selector, value)
+
 > expect({ component, modifier, media }).toHaveStyleRule(selector, value)
+
 > expect({ css, props, modifier, media }).toHaveStyleRule(selector, value)
 
 Asserts that `tree`, `component` or `css` has a rule `selector: value;`. You can also pass some additional parameters to test selectors and media queries, here is an example:
