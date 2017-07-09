@@ -1,4 +1,5 @@
 import React from 'react';
+import chalk from 'chalk';
 import ReactTestRenderer from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import styled, { css } from 'styled-components';
@@ -43,7 +44,7 @@ describe('toHaveStyleRule', () => {
     selector,
     received,
   } = {}) =>
-    `Expected ${selector} matching ${expected} received: ${received}`;
+    `Expected ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(received)}`;
 
   test('should pass if properties are equal', () => {
     const component = ReactTestRenderer.create(<Button />);

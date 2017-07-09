@@ -1,4 +1,5 @@
 import React from 'react';
+import chalk from 'chalk';
 import styled from 'styled-components';
 import '../../src/jest';
 import toHaveComponent from '../../src/matchers/toHaveComponent';
@@ -12,7 +13,7 @@ const StyledFoo = styled(Foo)``;
 
 describe('toHaveComponent', () => {
   const getMessage = ({ received, expected }) =>
-    `Expected styled-component to have component ${expected} received: ${received}`;
+    `Expected styled-component to have component\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(received)}`;
 
   test('should pass if tagnames are equal', () => {
     const result = toHaveComponent(Button, 'button');

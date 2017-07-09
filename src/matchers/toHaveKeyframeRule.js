@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import getCSS from '../utils/getCSS';
 import getCodeBlock from '../utils/getCodeBlock';
 
@@ -15,7 +16,7 @@ const toHaveKeyframeRule = (received, keyframeSelector, selector, expected) => {
   const keyframeCode = findKeyframeCode(received);
 
   const getMessage = value =>
-    `Expected keyframe to have ${keyframeSelector} ${selector} matching ${expected} received: ${value}`;
+    `Expected keyframe to have ${keyframeSelector} ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(value)}`;
 
   const error = {
     pass: false,

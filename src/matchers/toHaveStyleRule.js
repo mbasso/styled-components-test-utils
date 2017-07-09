@@ -1,6 +1,7 @@
 /* eslint-disable one-var, no-useless-escape, no-underscore-dangle */
 
 import React from 'react';
+import chalk from 'chalk';
 import ReactTestRenderer from 'react-test-renderer';
 import styled from 'styled-components';
 import mediaQuery from 'css-mediaquery';
@@ -90,7 +91,7 @@ const toHaveStyleRule = (received, selector, expected) => {
 
   const css = getCSS();
 
-  const getMessage = value => `Expected ${selector} matching ${expected} received: ${value}`;
+  const getMessage = value => `Expected ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(value)}`;
 
   const error = {
     pass: false,

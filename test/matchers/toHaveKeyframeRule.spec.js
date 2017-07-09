@@ -1,4 +1,5 @@
 import { keyframes } from 'styled-components';
+import chalk from 'chalk';
 import '../../src/jest';
 import toHaveKeyframeRule from '../../src/matchers/toHaveKeyframeRule';
 
@@ -18,7 +19,7 @@ describe('toHaveKeyframeRule', () => {
     expected,
     received,
   }) =>
-    `Expected keyframe to have ${keyframeSelector} ${selector} matching ${expected} received: ${received}`;
+    `Expected keyframe to have ${keyframeSelector} ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(received)}`;
 
   test('should pass if properties are equal', () => {
     const result = toHaveKeyframeRule(fadeIn, '0%', 'opacity', '0');

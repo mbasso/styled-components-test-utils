@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import chalk from 'chalk';
 import '../../src/jest';
 import toBeAGlobalStyle from '../../src/matchers/toBeAGlobalStyle';
 
@@ -16,7 +17,7 @@ describe('toBeAGlobalStyle', () => {
     }
   `;
 
-  const getMessage = value => `Expected global styles to contain: ${value}`;
+  const getMessage = value => `Expected global styles to contain:\n\t${chalk.red(value)}`;
 
   test('should pass', () => {
     const result = toBeAGlobalStyle(style);

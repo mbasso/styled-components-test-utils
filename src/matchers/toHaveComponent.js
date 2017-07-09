@@ -1,4 +1,5 @@
 import React from 'react';
+import chalk from 'chalk';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 const getFunctionName = (fun) => {
@@ -23,6 +24,6 @@ export default (Component, expected) => {
 
   return {
     pass: component === expected,
-    message: `Expected styled-component to have component ${getComponentName(expected)} received: ${getComponentName(component)}`,
+    message: `Expected styled-component to have component\n\t${chalk.green(getComponentName(expected))}\nreceived:\n\t${chalk.red(getComponentName(component))}`,
   };
 };
