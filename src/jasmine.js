@@ -1,4 +1,7 @@
+import init from './init';
 import * as matchers from './';
+
+init();
 
 export default function injectStyledUtils(jasmine) {
   const extension = {};
