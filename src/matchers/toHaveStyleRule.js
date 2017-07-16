@@ -95,7 +95,7 @@ const toHaveStyleRule = (received, selector, expected) => {
 
   const error = {
     pass: false,
-    message: getMessage(undefined),
+    message: `Property not found: ${chalk.red(selector)}`,
   };
 
   let code = css;

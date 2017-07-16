@@ -71,11 +71,7 @@ describe('toHaveStyleRule', () => {
   test('should fail if property is not present', () => {
     const component = ReactTestRenderer.create(<Button />);
     const result = toHaveStyleRule(component, 'foo', 'red');
-    expect(result.message).toEqual(getMessage({
-      received: 'undefined',
-      selector: 'foo',
-      expected: 'red',
-    }));
+    expect(result.message).toEqual(`Property not found: ${chalk.red('foo')}`);
     expect(result.pass).toBeFalsy();
   });
 

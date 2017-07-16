@@ -20,7 +20,7 @@ const toHaveKeyframeRule = (received, keyframeSelector, selector, expected) => {
 
   const error = {
     pass: false,
-    message: getMessage(undefined),
+    message: `Property not found: ${chalk.red(keyframeSelector)} ${chalk.red(selector)}`,
   };
 
   if (keyframeCode === '') return error;

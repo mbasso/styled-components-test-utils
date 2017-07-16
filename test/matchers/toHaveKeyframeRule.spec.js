@@ -45,34 +45,19 @@ describe('toHaveKeyframeRule', () => {
 
   test('should fail if property is not present', () => {
     const result = toHaveKeyframeRule(fadeIn, '0%', 'foo', '0');
-    expect(result.message).toEqual(getMessage({
-      keyframeSelector: '0%',
-      selector: 'foo',
-      expected: '0',
-      received: 'undefined',
-    }));
+    expect(result.message).toEqual(`Property not found: ${chalk.red('0%')} ${chalk.red('foo')}`);
     expect(result.pass).toBeFalsy();
   });
 
   test('should fail if keyframeSelector is not present', () => {
     const result = toHaveKeyframeRule(fadeIn, '75%', 'top', '0');
-    expect(result.message).toEqual(getMessage({
-      keyframeSelector: '75%',
-      selector: 'top',
-      expected: '0',
-      received: 'undefined',
-    }));
+    expect(result.message).toEqual(`Property not found: ${chalk.red('75%')} ${chalk.red('top')}`);
     expect(result.pass).toBeFalsy();
   });
 
   test('should fail if keyframed doesn\'t exist', () => {
     const result = toHaveKeyframeRule('foo', '75%', 'top', '0');
-    expect(result.message).toEqual(getMessage({
-      keyframeSelector: '75%',
-      selector: 'top',
-      expected: '0',
-      received: 'undefined',
-    }));
+    expect(result.message).toEqual(`Property not found: ${chalk.red('75%')} ${chalk.red('top')}`);
     expect(result.pass).toBeFalsy();
   });
 
