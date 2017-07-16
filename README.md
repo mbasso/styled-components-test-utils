@@ -20,7 +20,7 @@
 	- [toHaveKeyframeRule](#tohavekeyframerule)
 	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
-	- [toMatchStyledComponentSnapshot](#tomatchstyledcomponentsnapshot)
+	- [toMatchStyledComponentsSnapshot](#tomatchstyledcomponentssnapshot)
 - [Change Log](#change-log)
 - [Authors](#authors)
 - [Copyright and License](#copyright-and-license)
@@ -224,7 +224,7 @@ expect(`
 `).toBeAGlobalStyle();
 ```
 
-### toMatchStyledComponentSnapshot
+### toMatchStyledComponentsSnapshot
 :warning: Jest only :warning:
 > expect(tree).toMatchStyledComponentsSnapshot()
 

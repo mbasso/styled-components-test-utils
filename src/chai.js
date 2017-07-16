@@ -1,6 +1,9 @@
+import init from './init';
 // eslint-disable-next-line
 import chai from 'chai';
 import * as matchers from './';
+
+init();
 
 Object.keys(matchers).forEach((x) => {
   chai.Assertion.addMethod(x, function matcher(...params) {

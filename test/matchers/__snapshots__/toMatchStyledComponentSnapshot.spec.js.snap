@@ -3,6 +3,11 @@
 exports[`toMatchStyledComponentsSnapshot null 1`] = `null`;
 
 exports[`toMatchStyledComponentsSnapshot should work with enzyme mount 1`] = `
+.iATjrR {
+  padding: 4em;
+  background: papayawhip;
+}
+
 <styled.section>
   <section
     className="sc-bdVaJa iATjrR"
@@ -13,6 +18,11 @@ exports[`toMatchStyledComponentsSnapshot should work with enzyme mount 1`] = `
 `;
 
 exports[`toMatchStyledComponentsSnapshot should work with enzyme shallow rendering 1`] = `
+.iATjrR {
+  padding: 4em;
+  background: papayawhip;
+}
+
 <section
   className="sc-bdVaJa iATjrR"
 >
@@ -21,6 +31,11 @@ exports[`toMatchStyledComponentsSnapshot should work with enzyme shallow renderi
 `;
 
 exports[`toMatchStyledComponentsSnapshot should work with react-test-renderer 1`] = `
+.iATjrR {
+  padding: 4em;
+  background: papayawhip;
+}
+
 <section
   className="sc-bdVaJa iATjrR"
 >

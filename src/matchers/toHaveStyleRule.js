@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import ReactTestRenderer from 'react-test-renderer';
 import styled from 'styled-components';
 import mediaQuery from 'css-mediaquery';
+import styleSheet from 'styled-components/lib/models/StyleSheet';
 import getCSS from '../utils/getCSS';
 import getCodeBlock from '../utils/getCodeBlock';
 
@@ -31,8 +32,8 @@ const findClassName = (received) => {
       const rendered = component.node._reactInternalInstance._renderedComponent;
 
       className = rendered._instance && rendered._instance.state
-                  ? rendered._instance.state.generatedClassName
-                  : rendered._currentElement.props.className;
+        ? rendered._instance.state.generatedClassName
+        : rendered._currentElement.props.className;
     }
   }
 
@@ -54,7 +55,7 @@ const findClassName = (received) => {
 
 const getCodeInMedia = (code, media) => {
   const newMedia = media.replace('(', '\\(')
-                        .replace(')', '\\)');
+    .replace(')', '\\)');
   const mediaMatches = new RegExp(`@media\\s*${newMedia}\\s*{(.*)`).exec(code);
   const trailingCode = mediaMatches && mediaMatches[0];
   if (!trailingCode) return '';
@@ -89,7 +90,7 @@ const toHaveStyleRule = (received, selector, expected) => {
     className = findClassName(received);
   }
 
-  const css = getCSS();
+  const css = getCSS(styleSheet);
 
   const getMessage = value => `Expected ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(value)}`;
 
@@ -119,8 +120,8 @@ const toHaveStyleRule = (received, selector, expected) => {
     }
 
     let values = medias.filter(x => mediaQuery.match(x, media))
-                          .map(x => getCodeInMedia(code, x))
-                          .map(x => getStyleRule(x, className, selector));
+      .map(x => getCodeInMedia(code, x))
+      .map(x => getStyleRule(x, className, selector));
 
     const mediaMatches = values.length;
     const classMatches = code.match(new RegExp(className, 'g'));
