@@ -20,7 +20,7 @@
 	- [toHaveKeyframeRule](#tohavekeyframerule)
 	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
-	- [toMatchSnapshot](#toMatchSnapshot)
+	- [toMatchSnapshot](#tomatchsnapshot)
 - [Change Log](#change-log)
 - [Authors](#authors)
 - [Copyright and License](#copyright-and-license)
