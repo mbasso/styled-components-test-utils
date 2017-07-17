@@ -27,6 +27,9 @@ module.exports = env => {
         }
       ]
     },
+    node: {
+      fs: 'empty',
+    },
     plugins: removeEmpty([
       new webpack.optimize.OccurrenceOrderPlugin(),
       ifProd(new webpack.optimize.ModuleConcatenationPlugin()),

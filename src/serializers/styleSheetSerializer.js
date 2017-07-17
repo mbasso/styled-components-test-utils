@@ -1,56 +1,73 @@
 import css from 'css';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
 import getCSS from '../utils/getCSS';
 import getClassNames from '../utils/getClassNames';
 
-const filterNodes = classNames => (rule) => {
-  if (rule.type === 'rule') {
-    const className = rule.selectors[0].split(/:| /)[0];
-    return classNames.includes(className.substring(1)) && rule.declarations.length;
-  }
+const includesClassNames = (classNames, selectors) =>
+  classNames.some(className =>
+    selectors.some(selector => selector.indexOf(className) > -1),
+  );
 
-  return false;
-};
+const filterRules = classNames => rule =>
+  rule.type === 'rule' &&
+  includesClassNames(classNames, rule.selectors) &&
+  rule.declarations.length;
 
-const getAtRules = (ast, filter) => (
+const getAtRules = (ast, filter) =>
   ast.stylesheet.rules
     .filter(rule => rule.type === 'media' || rule.type === 'supports')
-    .reduce((acc, mediaQuery) => {
+    .reduce((acc, atRule) => {
       // eslint-disable-next-line
-      mediaQuery.rules = mediaQuery.rules.filter(filter);
+      atRule.rules = atRule.rules.filter(filter);
 
-      if (mediaQuery.rules.length) {
-        return acc.concat(mediaQuery);
+      if (atRule.rules.length) {
+        return acc.concat(atRule);
       }
 
       return acc;
-    }, [])
-);
+    }, []);
 
-const getStyles = (classNames) => {
-  const styles = getCSS(styleSheet);
-  const ast = css.parse(styles);
-  const filter = filterNodes(classNames);
+const getStyle = (classNames) => {
+  const ast = getCSS(true);
+  const filter = filterRules(classNames);
   const rules = ast.stylesheet.rules.filter(filter);
-  const mediaQueries = getAtRules(ast, filter);
+  const atRules = getAtRules(ast, filter);
 
-  ast.stylesheet.rules = rules.concat(mediaQueries);
+  ast.stylesheet.rules = rules.concat(atRules);
 
-  return css.stringify(ast).trim();
+  return css.stringify(ast);
+};
+
+const replaceClassNames = (classNames, style, code) => {
+  let index = 0;
+  return classNames.reduce((acc, className) => {
+    if (style.indexOf(className) > -1) {
+      // eslint-disable-next-line
+      return acc.replace(new RegExp(className, 'g'), `c${index++}`);
+    }
+
+    return acc.replace(
+      new RegExp(`(className="[^"]*)${className}\\s?([^"]*")`, 'g'),
+      '$1$2',
+    );
+  }, `${style}${style ? '\n\n' : ''}${code}`);
 };
 
 const styleSheetSerializer = {
   test(val) {
-    return val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json');
+    return (
+      val && !val.withStyle && val.$$typeof === Symbol.for('react.test.json')
+    );
   },
+
   print(val, print) {
-    const classNames = getClassNames(val);
-    const styles = classNames.length ? `${getStyles(classNames)}\n\n` : '';
-
     // eslint-disable-next-line
-    val.withStyles = true;
+    val.withStyle = true;
 
-    return `${styles}${print(val)}`;
+    const classNames = getClassNames(val);
+    const style = getStyle(classNames);
+    const code = print(val);
+
+    return classNames.length ? replaceClassNames(classNames, style, code) : code;
   },
 };
 

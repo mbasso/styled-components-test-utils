@@ -5,7 +5,6 @@ import chalk from 'chalk';
 import ReactTestRenderer from 'react-test-renderer';
 import styled from 'styled-components';
 import mediaQuery from 'css-mediaquery';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
 import getCSS from '../utils/getCSS';
 import getCodeBlock from '../utils/getCodeBlock';
 
@@ -90,7 +89,7 @@ const toHaveStyleRule = (received, selector, expected) => {
     className = findClassName(received);
   }
 
-  const css = getCSS(styleSheet);
+  const css = getCSS();
 
   const getMessage = value => `Expected ${selector} matching\n\t${chalk.green(expected)}\nreceived:\n\t${chalk.red(value)}`;
 

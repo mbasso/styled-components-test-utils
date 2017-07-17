@@ -1,10 +1,9 @@
 import chalk from 'chalk';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
 import getCSS from '../utils/getCSS';
 import getCodeBlock from '../utils/getCodeBlock';
 
 const findKeyframeCode = (keyframe) => {
-  const css = getCSS(styleSheet);
+  const css = getCSS();
   const keyframeMatches = new RegExp(`@keyframes\\s*${keyframe}\\s*{(.*)`).exec(css);
 
   const trailingCode = keyframeMatches && keyframeMatches[0];

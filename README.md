@@ -20,7 +20,7 @@
 	- [toHaveKeyframeRule](#tohavekeyframerule)
 	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
-	- [toMatchStyledComponentsSnapshot](#tomatchstyledcomponentssnapshot)
+	- [toMatchSnapshot](#toMatchSnapshot)
 - [Change Log](#change-log)
 - [Authors](#authors)
 - [Copyright and License](#copyright-and-license)
@@ -224,15 +224,15 @@ expect(`
 `).toBeAGlobalStyle();
 ```
 
-### toMatchStyledComponentsSnapshot
+### toMatchSnapshot
 :warning: Jest only :warning:
-> expect(tree).toMatchStyledComponentsSnapshot()
+> expect(tree).toMatchSnapshot()
 
 This matcher is used to assert complex selectors or to test your entire component in one go.
 
 ```js
 const tree = renderer.create(<MyComponent />).toJSON();
-expect(tree).toMatchStyledComponentsSnapshot();
+expect(tree).toMatchSnapshot();
 ```
 
 If you want to use it with enzyme you also need to install [enzyme-to-json](https://www.npmjs.com/package/enzyme-to-json)
@@ -250,7 +250,28 @@ import toJSON from 'enzyme-to-json';
 test('with enzyme', () => {
   const wrapper = shallow(<MyComponent />);
   const tree = toJSON(wrapper);
-  expect(tree).toMatchStyledComponentsSnapshot();
+  expect(tree).toMatchSnapshot();
+})
+```
+
+or, you can enable it globally in your `package.json`:
+
+```json
+"jest": {
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ]
+}
+```
+
+and use it as follows
+
+```js
+import { shallow } from 'enzyme';
+
+test('with enzyme', () => {
+  const tree = shallow(<MyComponent />);
+  expect(tree).toMatchSnapshot();
 })
 ```
 
