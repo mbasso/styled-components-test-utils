@@ -8,7 +8,9 @@ exports[`any component - mount 1`] = `
 
 <div>
   <Link>
-    <a>
+    <a
+      className={undefined}
+    >
       Unstyled, boring Link
     </a>
   </Link>
@@ -412,7 +414,7 @@ html.test .c0 {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c0 {
     background: tomato;
   }
@@ -451,7 +453,7 @@ html.test .c0 {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c0 {
     background: tomato;
   }
@@ -488,7 +490,7 @@ html.test .c0 {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .c0 {
     background: tomato;
   }
