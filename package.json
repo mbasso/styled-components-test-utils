@@ -1,6 +1,6 @@
 {
   "name": "styled-components-test-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Test utils for styled-components compatible with jest, expect, chai and jasmine",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -65,8 +65,9 @@
     "compression-webpack-plugin": "0.4.0",
     "coveralls": "2.13.1",
     "cross-env": "4.0.0",
-    "enzyme": "2.9.1",
-    "enzyme-to-json": "1.5.1",
+    "enzyme": "3.1.0",
+    "enzyme-adapter-react-16": "1.0.2",
+    "enzyme-to-json": "3.1.4",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-config-prettier": "1.7.0",
@@ -85,13 +86,12 @@
     "nyc": "10.3.0",
     "prettier": "1.2.2",
     "prettier-eslint": "6.1.2",
-    "react": "15.5.4",
-    "react-addons-perf": "15.4.2",
-    "react-dom": "15.5.4",
-    "react-test-renderer": "15.5.4",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-test-renderer": "16.0.0",
     "rimraf": "2.6.1",
     "strip-ansi": "3.0.1",
-    "styled-components": "2.1.1",
+    "styled-components": "2.2.2",
     "webpack": "3.0.0"
   },
   "dependencies": {
@@ -104,9 +104,9 @@
     "jest-matcher-utils": "^20.0.3",
     "jest-snapshot": "^20.0.3",
     "strip-ansi": "^3.0.1",
-    "react-test-renderer": "^15.5.4",
-    "react": "^15.5.4",
-    "styled-components": "^2.1.0"
+    "react-test-renderer": "^16.0.0",
+    "react": "^16.0.0",
+    "styled-components": "^2.2.2"
   },
   "npmName": "styled-components-test-utils",
   "npmFileMap": [
@@ -129,6 +129,9 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/jasmine.spec.js"
+    ],
+    "setupFiles": [
+      "./test/setup.js"
     ]
   }
 }

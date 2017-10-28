@@ -13,14 +13,17 @@ const findClassName = (received) => {
 
   const component = received.component || received;
 
-  if (component.props && component.props.className) {
+  if (typeof component.props === 'function') {
+    // enzyme 3
+    className = component.props().className;
+  } else if (component.props && (component.props.class || component.props.className)) {
     // react-test-renderer/shallow
-    className = component.props.className;
+    className = component.props.class || component.props.className;
   } else if (!component.node && component.constructor && typeof component.toJSON === 'function') {
     // react-test-renderer
     className = component.toJSON().props.className;
   } else if (component.node) {
-    // enzyme
+    // enzyme 2
     if (component.node.className) {
       className = component.node.className;
     } else if (component.node.props) {
@@ -36,8 +39,11 @@ const findClassName = (received) => {
     }
   }
 
+  if (!className) {
+    className = '';
+  }
   // styled components adds the className on the end.
-  className = className.split(' ').pop();
+  className = className.split(/\s+/).pop();
 
   if (received.modifier) {
     const modifier = received.modifier.trim();
@@ -54,7 +60,8 @@ const findClassName = (received) => {
 
 const getCodeInMedia = (code, media) => {
   const newMedia = media.replace('(', '\\(')
-    .replace(')', '\\)');
+    .replace(')', '\\)')
+    .replace(/\s/g, '\\s*');
   const mediaMatches = new RegExp(`@media\\s*${newMedia}\\s*{(.*)`).exec(code);
   const trailingCode = mediaMatches && mediaMatches[0];
   if (!trailingCode) return '';
