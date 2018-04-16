@@ -12,9 +12,7 @@ type LinkProps = {
 };
 
 const toMatchSnapshot = (name, component) => {
-  expect(renderer.create(component).toJSON()).toMatchSnapshot(
-    `${name} - react-test-renderer`,
-  );
+  expect(renderer.create(component).toJSON()).toMatchSnapshot(`${name} - react-test-renderer`);
   expect(shallow(component)).toMatchSnapshot(`${name} - shallow`);
   expect(mount(component)).toMatchSnapshot(`${name} - mount`);
 };
@@ -54,10 +52,11 @@ test('basic', () => {
 });
 
 test('any component', () => {
-  const Link = ({ className, children }: LinkProps) =>
+  const Link = ({ className, children }: LinkProps) => (
     <a className={className}>
       {children}
-    </a>;
+    </a>
+  );
 
   const StyledLink = styled(Link)`
     color: palevioletred;
@@ -206,7 +205,5 @@ test('referring to other components', () => {
   expect(renderer.create(component).toJSON()).toMatchSnapshot(
     'referring to other components - react-test-renderer',
   );
-  expect(mount(component)).toMatchSnapshot(
-    'referring to other components - mount',
-  );
+  expect(mount(component)).toMatchSnapshot('referring to other components - mount');
 });
