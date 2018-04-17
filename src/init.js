@@ -1,10 +1,10 @@
-import styleSheet from 'styled-components/lib/models/StyleSheet';
+import StyleSheet from './utils/styleSheet';
 import isOverV2 from './utils/isOverV2';
 import isServer from './utils/isServer';
 
 const init = () => {
   if (isOverV2()) {
-    styleSheet.reset(isServer());
+    StyleSheet.reset(isServer());
   }
 };
 

@@ -1,6 +1,7 @@
 import { ServerStyleSheet } from 'styled-components';
-import StyleSheet from 'styled-components/lib/models/StyleSheet';
 import css from 'css';
+
+import StyleSheet from './styleSheet';
 import isOverV2 from './isOverV2';
 import isServer from './isServer';
 
@@ -11,7 +12,7 @@ const getStyle = (html) => {
   let matches;
 
   // eslint-disable-next-line
-  while((matches = STYLE_TAGS_REGEXP.exec(html)) !== null) {
+  while ((matches = STYLE_TAGS_REGEXP.exec(html)) !== null) {
     style += matches[1].trim();
   }
 
