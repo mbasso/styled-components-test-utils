@@ -15,7 +15,8 @@ const getStyleSheet = () => {
   }
 
   try {
-    return require.resolve('styled-components/lib/models/StyleSheet').default;
+    // eslint-disable-next-line global-require
+    return require('styled-components/lib/models/StyleSheet').default;
   } catch (e) {
     throw new Error('Could not find module styled-components/lib/models/StyleSheet.js');
   }
