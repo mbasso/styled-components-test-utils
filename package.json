@@ -98,7 +98,12 @@
     "css": "^2.2.1",
     "css-mediaquery": "0.1.2"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "chalk": "^1.0.0 || ^2.0.0",
+    "react-test-renderer": "^15.0.0 || ^16.0.0",
+    "react": "^15.0.0 || ^16.0.0",
+    "styled-components": "^2.0.0 || ^3.0.0"
+  },
   "npmName": "styled-components-test-utils",
   "npmFileMap": [
     {
