@@ -1,6 +1,6 @@
 {
   "name": "styled-components-test-utils",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Test utils for styled-components compatible with jest, expect, chai and jasmine",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
