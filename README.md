@@ -17,6 +17,7 @@
 	- [Jasmine](#jasmine)
 - [Api](#api)
 	- [toHaveStyleRule](#tohavestylerule)
+	- [toNotHaveStyleRule](#tonothavestylerule)
 	- [toHaveKeyframeRule](#tohavekeyframerule)
 	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
@@ -165,6 +166,23 @@ expect({
     },
   },
 }).toHaveStyleRule('color', 'purple');
+```
+
+### toNotHaveStyleRule
+> expect(tree).toNotHaveStyleRule(selector)
+>
+> expect({ component, modifier, media }).toNotHaveStyleRule(selector)
+>
+> expect({ css, props, modifier, media }).toNotHaveStyleRule(selector)
+
+Asserts that `tree`, `component` or `css` has no rule `selector: value;`. You can also pass some additional parameters to test selectors and media queries, as you can do with [toHaveStyleRule](#tohavestylerule), here is an example:
+
+```js
+const Button = styled.button`
+  color: blue;
+`;
+const component = renderer.create(<Button />);
+expect(component).toNotHaveStyleRule('background-color');
 ```
 
 ### toHaveKeyframeRule
