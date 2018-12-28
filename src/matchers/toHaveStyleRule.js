@@ -69,8 +69,10 @@ const getCodeInMedia = (code, media) => {
   return getCodeBlock(trailingCode);
 };
 
+const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 const getStyleRule = (code, className, selector) => {
-  const styles = new RegExp(`${className}\\s*{([^}]*)`, 'g').exec(code);
+  const styles = new RegExp(`${escapeRegExp(className)}\\s*{([^}]*)`, 'g').exec(code);
   const capture = new RegExp(`(?:[^\\-]|^)${selector}\\s*:\\s*([^;]+)`, 'g');
 
   const matches = styles && styles[1].match(capture);

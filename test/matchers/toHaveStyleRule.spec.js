@@ -15,6 +15,10 @@ const Button = styled.button`
     color: white;
   }
 
+  *:not([fill='none']) {
+    color: black;
+  }
+
   > span {
     color: green;
   }
@@ -107,6 +111,18 @@ describe('toHaveStyleRule', () => {
     expect(result.message).toEqual(getMessage({
       expected: 'white',
       received: 'white',
+      selector: 'color',
+    }));
+    expect(result.pass).toBeTruthy();
+
+    component = ReactTestRenderer.create(<Button />);
+    result = toHaveStyleRule({
+      component,
+      modifier: '*:not([fill=\'none\'])',
+    }, 'color', 'black');
+    expect(result.message).toEqual(getMessage({
+      expected: 'black',
+      received: 'black',
       selector: 'color',
     }));
     expect(result.pass).toBeTruthy();
