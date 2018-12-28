@@ -151,6 +151,7 @@ const toHaveStyleRule = (received, selector, expected) => {
   return {
     message: getMessage(val),
     pass: expected instanceof RegExp ? val.match(expected) : val === expected,
+    value: val,
   };
 };
 

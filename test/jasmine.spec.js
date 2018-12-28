@@ -19,6 +19,11 @@ describe('jasmine', () => {
     expect(component).toHaveStyleRule('color', 'blue');
   });
 
+  it('toNotHaveStyleRule', () => {
+    const component = ReactTestRenderer.create(<Button />);
+    expect(component).toNotHaveStyleRule('text-decoration');
+  });
+
   it('toBeAGlobalStyle', () => {
     expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
   });

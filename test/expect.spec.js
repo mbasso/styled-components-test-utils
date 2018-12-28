@@ -12,6 +12,11 @@ describe('expect', () => {
     expect(component).toHaveStyleRule('color', 'blue');
   });
 
+  test('toNotHaveStyleRule', () => {
+    const component = ReactTestRenderer.create(<Button />);
+    expect(component).toNotHaveStyleRule('text-decoration');
+  });
+
   test('toBeAGlobalStyle', () => {
     expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
   });
