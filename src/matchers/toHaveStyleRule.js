@@ -59,8 +59,8 @@ const findClassName = (received) => {
 };
 
 const getCodeInMedia = (code, media) => {
-  const newMedia = media.replace('(', '\\(')
-    .replace(')', '\\)')
+  const newMedia = media.replace(/\(/g, '\\(')
+    .replace(/\)/g, '\\)')
     .replace(/\s/g, '\\s*');
   const mediaMatches = new RegExp(`@media\\s*${newMedia}\\s*{(.*)`).exec(code);
   const trailingCode = mediaMatches && mediaMatches[0];
