@@ -7,7 +7,7 @@ const dom = new JSDOM('<!doctype html><html><body></body></html>');
 global.window = dom.window;
 global.document = dom.window.document;
 
-const { Button, fadeIn } = require('./utils/framework');
+const { Button, fadeIn, GlobalStyle } = require('./utils/framework');
 
 describe('jasmine', () => {
   beforeAll(() => {
@@ -25,7 +25,7 @@ describe('jasmine', () => {
   });
 
   it('toBeAGlobalStyle', () => {
-    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
+    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle(GlobalStyle);
   });
 
   it('toHaveKeyframeRule', () => {

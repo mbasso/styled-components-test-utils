@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import ReactTestRenderer from 'react-test-renderer';
 import '../src/chai';
-import { Button, fadeIn } from './utils/framework';
+import { Button, fadeIn, GlobalStyle } from './utils/framework';
 
 describe('chai', () => {
   test('toHaveStyleRule', () => {
@@ -16,7 +16,7 @@ describe('chai', () => {
   });
 
   test('toBeAGlobalStyle', () => {
-    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
+    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle(GlobalStyle);
   });
 
   it('toHaveKeyframeRule', () => {

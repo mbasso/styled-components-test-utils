@@ -1,4 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Roboto';
+  }
+`;
 
 export const fadeIn = keyframes`
     100% {

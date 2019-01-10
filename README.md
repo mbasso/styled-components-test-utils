@@ -205,24 +205,30 @@ expect(fadeIn).toHaveKeyframeRule('100%', 'opacity', '1');
 ```
 
 ### toBeAGlobalStyle
-> expect(style).toBeAGlobalStyle()
+> expect(style).toBeAGlobalStyle(Component)
 
-Asserts that `style` is a global style.
+Asserts that `style` is a global style after mounting the given `Component`.
 
 ```js
-import fontFamily from './fontFamily';
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-injectGlobal`
-  input {
-    font-family: ${fontFamily};
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    font-family: ${props => props.theme.fontFamily};
   }
 `;
 
 expect(`
-  input {
-    font-family: Roboto;
+  body {
+    color: white;
+    font-family: Helvetica Neue;
   }
-`).toBeAGlobalStyle();
+`).toBeAGlobalStyle(() => (
+  <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
+    <GlobalStyle whiteColor />
+  </ThemeProvider>
+));
 ```
 
 ### toMatchSnapshot
