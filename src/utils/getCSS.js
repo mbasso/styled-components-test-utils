@@ -2,7 +2,6 @@ import { ServerStyleSheet } from 'styled-components';
 import css from 'css';
 
 import StyleSheet from './styleSheet';
-import isOverV2 from './isOverV2';
 import isServer from './isServer';
 
 const STYLE_TAGS_REGEXP = /<style[^>]*>([^<]*)</g;
@@ -22,14 +21,10 @@ const getStyle = (html) => {
 const getCSS = (parse = false) => {
   let style;
 
-  if (isOverV2()) {
-    if (isServer()) {
-      style = getStyle(new ServerStyleSheet().getStyleTags());
-    } else {
-      style = getStyle(StyleSheet.instance.toHTML());
-    }
+  if (isServer()) {
+    style = getStyle(new ServerStyleSheet().getStyleTags());
   } else {
-    style = StyleSheet.rules().map(rule => rule.cssText).join('\n');
+    style = getStyle(StyleSheet.instance.toHTML());
   }
 
   return parse ? css.parse(style) : style;
