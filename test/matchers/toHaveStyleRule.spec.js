@@ -31,6 +31,12 @@ const Button = styled.button`
     color: black;
   }
 
+  @media screen and (max-width: 3800px) and (min-width: 601px) {
+    &:hover {
+      color: pink;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     &:hover {
       color: purple;
@@ -287,7 +293,7 @@ describe('toHaveStyleRule', () => {
 
   test('should support string @media', () => {
     const component = ReactTestRenderer.create(<Button />);
-    const result = toHaveStyleRule({
+    let result = toHaveStyleRule({
       component,
       modifier: '&:hover',
       media: 'screen and (max-width: 600px)',
@@ -295,6 +301,18 @@ describe('toHaveStyleRule', () => {
     expect(result.message).toEqual(getMessage({
       expected: 'purple',
       received: 'purple',
+      selector: 'color',
+    }));
+    expect(result.pass).toBeTruthy();
+
+    result = toHaveStyleRule({
+      component,
+      modifier: '&:hover',
+      media: 'screen and (max-width: 3800px) and (min-width: 601px)',
+    }, 'color', 'pink');
+    expect(result.message).toEqual(getMessage({
+      expected: 'pink',
+      received: 'pink',
       selector: 'color',
     }));
     expect(result.pass).toBeTruthy();
@@ -339,7 +357,7 @@ describe('toHaveStyleRule', () => {
     }, 'color', 'purple');
     expect(result.message).toEqual(getMessage({
       expected: 'purple',
-      received: 'white',
+      received: 'pink',
       selector: 'color',
     }));
     expect(result.pass).toBeFalsy();
