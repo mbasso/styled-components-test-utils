@@ -7,6 +7,13 @@
 
 > Test utils for styled-components compatible with jest, expect, chai and jasmine
 
+- - -
+
+**:warning: Attention :warning: - if you want to use this library with styled-components v2 or v3, please install the 1.x.x version, defined in [this](https://github.com/mbasso/styled-components-test-utils/tree/v1) branch**
+
+- - -
+
+
 ## Table of Contents
 
 - [Motivation](#motivation)
