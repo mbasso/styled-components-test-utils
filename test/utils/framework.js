@@ -1,11 +1,4 @@
-import styled, { injectGlobal, keyframes } from 'styled-components';
-
-// eslint-disable-next-line
-injectGlobal`
-  body {
-    font-family: 'Roboto';
-  }
-`;
+import styled, { keyframes } from 'styled-components';
 
 export const fadeIn = keyframes`
     100% {

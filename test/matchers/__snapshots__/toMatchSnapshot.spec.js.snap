@@ -1,34 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`any component - mount 1`] = `
-.c0 {
-  color: palevioletred;
-  font-weight: bold;
-}
-
-<div>
-  <Link>
-    <a
-      className={undefined}
-    >
-      Unstyled, boring Link
-    </a>
-  </Link>
-  <br />
-  <Styled(Link)>
-    <Link
-      className="c0"
-    >
-      <a
-        className="c0"
-      >
-        Styled, exciting Link
-      </a>
-    </Link>
-  </Styled(Link)>
-</div>
-`;
-
 exports[`any component - react-test-renderer 1`] = `
 .c0 {
   color: palevioletred;
@@ -56,22 +27,10 @@ exports[`any component - shallow 1`] = `
     Unstyled, boring Link
   </Link>
   <br />
-  <Styled(Link)>
+  <.sc-bxivhb>
     Styled, exciting Link
-  </Styled(Link)>
+  </.sc-bxivhb>
 </div>
-`;
-
-exports[`attaching additional props - mount 1`] = `
-.c0 {
-  color: red;
-}
-
-<styled.div>
-  <div
-    className="c0"
-  />
-</styled.div>
 `;
 
 exports[`attaching additional props - react-test-renderer 1`] = `
@@ -85,40 +44,37 @@ exports[`attaching additional props - react-test-renderer 1`] = `
 `;
 
 exports[`attaching additional props - shallow 1`] = `
-.c0 {
-  color: red;
-}
-
-<div
-  className="c0"
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [
+        Object {
+          "className": "div",
+        },
+      ],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bZQynM",
+        "isStatic": true,
+        "lastClassName": "hgXmev",
+        "rules": Array [
+          "
+        color: red;
+      ",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bZQynM",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
 />
-`;
-
-exports[`basic - mount 1`] = `
-.c0 {
-  padding: 4em;
-  background: papayawhip;
-}
-
-.c1 {
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-}
-
-<styled.section>
-  <section
-    className="c0"
-  >
-    <styled.h1>
-      <h1
-        className="c1"
-      >
-        Hello World, this is my first styled component!
-      </h1>
-    </styled.h1>
-  </section>
-</styled.section>
 `;
 
 exports[`basic - react-test-renderer 1`] = `
@@ -145,26 +101,38 @@ exports[`basic - react-test-renderer 1`] = `
 `;
 
 exports[`basic - shallow 1`] = `
-.c0 {
-  padding: 4em;
-  background: papayawhip;
-}
-
-<section
-  className="c0"
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bwzfXH",
+        "isStatic": true,
+        "lastClassName": "kpuTtG",
+        "rules": Array [
+          "
+        padding: 4em;
+        background: papayawhip;
+      ",
+        ],
+      },
+      "displayName": "styled.section",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bwzfXH",
+      "target": "section",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
 >
-  <styled.h1>
+  <.sc-htpNat>
     Hello World, this is my first styled component!
-  </styled.h1>
-</section>
-`;
-
-exports[`empty style - mount 1`] = `
-<styled.div>
-  <div
-    className=""
-  />
-</styled.div>
+  </.sc-htpNat>
+</StyledComponent>
 `;
 
 exports[`empty style - react-test-renderer 1`] = `
@@ -174,48 +142,29 @@ exports[`empty style - react-test-renderer 1`] = `
 `;
 
 exports[`empty style - shallow 1`] = `
-<div
-  className=""
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "lastClassName": "bDWFJH",
+        "rules": Array [],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
 />
-`;
-
-exports[`extending styles - mount 1`] = `
-.c0 {
-  color: palevioletred;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
-}
-
-.c1 {
-  color: palevioletred;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
-  color: tomato;
-  border-color: tomato;
-}
-
-<div>
-  <styled.button>
-    <button
-      className="c0"
-    >
-      Normal Button
-    </button>
-  </styled.button>
-  <styled.button>
-    <button
-      className="c1"
-    >
-      Tomato Button
-    </button>
-  </styled.button>
-</div>
 `;
 
 exports[`extending styles - react-test-renderer 1`] = `
@@ -255,12 +204,12 @@ exports[`extending styles - react-test-renderer 1`] = `
 
 exports[`extending styles - shallow 1`] = `
 <div>
-  <styled.button>
+  <.sc-ifAKCX>
     Normal Button
-  </styled.button>
-  <styled.button>
+  </.sc-ifAKCX>
+  <.sc-EHOje>
     Tomato Button
-  </styled.button>
+  </.sc-EHOje>
 </div>
 `;
 
@@ -271,72 +220,6 @@ exports[`non-styled - react-test-renderer 1`] = `<div />`;
 exports[`non-styled - shallow 1`] = `<div />`;
 
 exports[`null 1`] = `null`;
-
-exports[`referring to other components - mount 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 5px 10px;
-  background: papayawhip;
-  color: palevioletred;
-}
-
-.c2 {
-  -webkit-transition: fill 0.25s;
-  transition: fill 0.25s;
-  width: 48px;
-  height: 48px;
-}
-
-.c0:hover .c2 {
-  fill: rebeccapurple;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  line-height: 1.2;
-}
-
-.c3::before {
-  content: '◀';
-  margin: 0 10px;
-}
-
-<styled.a
-  href="#"
->
-  <a
-    className="c0 c1"
-    href="#"
-  >
-    <styled.svg>
-      <svg
-        className="c2"
-      />
-    </styled.svg>
-    <styled.span>
-      <span
-        className="c3"
-      >
-        Hovering my parent changes my style!
-      </span>
-    </styled.span>
-  </a>
-</styled.a>
-`;
 
 exports[`referring to other components - react-test-renderer 1`] = `
 .c1 {
@@ -396,46 +279,6 @@ exports[`referring to other components - react-test-renderer 1`] = `
 </a>
 `;
 
-exports[`supported css - mount 1`] = `
-.c0 {
-  padding: 2em 1em;
-  background: papayawhip;
-}
-
-.c0:hover {
-  background: palevioletred;
-}
-
-.c0 > p {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-html.test .c0 {
-  display: none;
-}
-
-@media (max-width:600px) {
-  .c0 {
-    background: tomato;
-  }
-
-  .c0:hover {
-    background: yellow;
-  }
-}
-
-<styled.div>
-  <div
-    className="c0"
-  >
-    <p>
-      Hello World!
-    </p>
-  </div>
-</styled.div>
-`;
-
 exports[`supported css - react-test-renderer 1`] = `
 .c0 {
   padding: 2em 1em;
@@ -475,98 +318,53 @@ html.test .c0 {
 `;
 
 exports[`supported css - shallow 1`] = `
-.c0 {
-  padding: 2em 1em;
-  background: papayawhip;
-}
-
-.c0:hover {
-  background: palevioletred;
-}
-
-.c0 > p {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-html.test .c0 {
-  display: none;
-}
-
-@media (max-width:600px) {
-  .c0 {
-    background: tomato;
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-htoDjs",
+        "isStatic": true,
+        "lastClassName": "eIFaJq",
+        "rules": Array [
+          "
+        padding: 2em 1em;
+        background: papayawhip;
+        &:hover {
+          background: palevioletred;
+        }
+        @media (max-width: 600px) {
+          background: tomato;
+          &:hover {
+            background: yellow;
+          }
+        }
+        > p {
+          text-decoration: underline;
+        }
+        html.test & {
+          display: none;
+        }
+      ",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-htoDjs",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
   }
-
-  .c0:hover {
-    background: yellow;
-  }
-}
-
-<div
-  className="c0"
+  forwardedRef={null}
 >
   <p>
     Hello World!
   </p>
-</div>
-`;
-
-exports[`theming - mount 1`] = `
-.c0 {
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  color: palevioletred;
-  border: 2px solid palevioletred;
-}
-
-.c1 {
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  color: mediumseagreen;
-  border: 2px solid mediumseagreen;
-}
-
-<div>
-  <styled.button
-    theme={
-      Object {
-        "main": "palevioletred",
-      }
-    }
-  >
-    <button
-      className="c0"
-    >
-      Normal
-    </button>
-  </styled.button>
-  <ThemeProvider
-    theme={
-      Object {
-        "main": "mediumseagreen",
-      }
-    }
-  >
-    <styled.button
-      theme={
-        Object {
-          "main": "palevioletred",
-        }
-      }
-    >
-      <button
-        className="c1"
-      >
-        Themed
-      </button>
-    </styled.button>
-  </ThemeProvider>
-</div>
+</StyledComponent>
 `;
 
 exports[`theming - react-test-renderer 1`] = `
@@ -604,7 +402,7 @@ exports[`theming - react-test-renderer 1`] = `
 
 exports[`theming - shallow 1`] = `
 <div>
-  <styled.button
+  <.sc-gzVnrw
     theme={
       Object {
         "main": "palevioletred",
@@ -612,7 +410,7 @@ exports[`theming - shallow 1`] = `
     }
   >
     Normal
-  </styled.button>
+  </.sc-gzVnrw>
   <ThemeProvider
     theme={
       Object {
@@ -620,7 +418,7 @@ exports[`theming - shallow 1`] = `
       }
     }
   >
-    <styled.button
+    <.sc-gzVnrw
       theme={
         Object {
           "main": "palevioletred",
@@ -628,7 +426,7 @@ exports[`theming - shallow 1`] = `
       }
     >
       Themed
-    </styled.button>
+    </.sc-gzVnrw>
   </ThemeProvider>
 </div>
 `;

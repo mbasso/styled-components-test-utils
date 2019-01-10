@@ -83,7 +83,7 @@ test('extending styles', () => {
     border-radius: 3px;
   `;
 
-  const TomatoButton = Button.extend`
+  const TomatoButton = styled(Button)`
     color: tomato;
     border-color: tomato;
   `;
