@@ -10,9 +10,10 @@ const findKeyframeCode = (keyframe) => {
     animation: ${keyframe} 2s linear infinite;
   `;
 
-  TestRenderer.create(<Component />);
-
+  const testRenderer = TestRenderer.create(<Component />);
   const css = getCSS();
+  testRenderer.unmount();
+
   const keyframeMatches = new RegExp(`@keyframes\\s*${keyframe.getName()}\\s*{(.*)`).exec(css);
 
   const trailingCode = keyframeMatches && keyframeMatches[0];
