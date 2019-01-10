@@ -12,9 +12,9 @@ type LinkProps = {
 };
 
 const toMatchSnapshot = (name, component) => {
-  expect(renderer.create(component).toJSON()).toMatchSnapshot(`${name} - react-test-renderer`);
-  expect(shallow(component)).toMatchSnapshot(`${name} - shallow`);
   expect(mount(component)).toMatchSnapshot(`${name} - mount`);
+  expect(shallow(component)).toMatchSnapshot(`${name} - shallow`);
+  expect(renderer.create(component).toJSON()).toMatchSnapshot(`${name} - react-test-renderer`);
 };
 
 test('null', () => {
