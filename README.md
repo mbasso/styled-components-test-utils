@@ -19,7 +19,6 @@
 	- [toHaveStyleRule](#tohavestylerule)
 	- [toNotHaveStyleRule](#tonothavestylerule)
 	- [toHaveKeyframeRule](#tohavekeyframerule)
-	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
 	- [toMatchSnapshot](#tomatchsnapshot)
 - [Change Log](#change-log)
@@ -204,22 +203,6 @@ const fadeIn = keyframes`
 expect(fadeIn).toHaveKeyframeRule('0%', 'opacity', '0');
 expect(fadeIn).toHaveKeyframeRule('100%', 'opacity', '1');
 ```
-
-### toHaveComponent
-> expect(styledComponent).toHaveComponent(component)
-
-Asserts that `styledComponent` has component `component`.
-
-```js
-import Foo from './Foo';
-
-const Button = styled.button``;
-expect(Button).toHaveComponent('button');
-
-const Bar = Button.withComponent(Foo);
-expect(Bar).toHaveComponent(Foo);
-```
-
 
 ### toBeAGlobalStyle
 > expect(style).toBeAGlobalStyle()

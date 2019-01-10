@@ -18,10 +18,6 @@ describe('jest', () => {
     expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
   });
 
-  test('toHaveComponent', () => {
-    expect(Button).toHaveComponent('button');
-  });
-
   it('toHaveKeyframeRule', () => {
     expect(fadeIn).toHaveKeyframeRule('0%', 'opacity', '0');
   });

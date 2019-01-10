@@ -19,10 +19,6 @@ describe('chai', () => {
     expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
   });
 
-  it('toHaveComponent', () => {
-    expect(Button).toHaveComponent('button');
-  });
-
   it('toHaveKeyframeRule', () => {
     expect(fadeIn).toHaveKeyframeRule('0%', 'opacity', '0');
   });
