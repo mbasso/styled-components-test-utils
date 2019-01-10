@@ -1,10 +1,19 @@
+import React from 'react';
 import chalk from 'chalk';
+import styled from 'styled-components';
+import TestRenderer from 'react-test-renderer';
 import getCSS from '../utils/getCSS';
 import getCodeBlock from '../utils/getCodeBlock';
 
 const findKeyframeCode = (keyframe) => {
+  const Component = styled.div`
+    animation: ${keyframe} 2s linear infinite;
+  `;
+
+  TestRenderer.create(<Component />);
+
   const css = getCSS();
-  const keyframeMatches = new RegExp(`@keyframes\\s*${keyframe}\\s*{(.*)`).exec(css);
+  const keyframeMatches = new RegExp(`@keyframes\\s*${keyframe.getName()}\\s*{(.*)`).exec(css);
 
   const trailingCode = keyframeMatches && keyframeMatches[0];
   if (!trailingCode) return '';
