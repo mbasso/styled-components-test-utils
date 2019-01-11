@@ -63,12 +63,13 @@ const getCodeInMedia = (code, media) => {
     .replace(/\s/g, '\\s*');
 
   let mediaMatches;
-  const mediaRegExp = new RegExp('@media\\s*' + newMedia + '\\s*{(.*)}', 'g');
+  const mediaRegExp = new RegExp(`@media\\s*${newMedia}\\s*{(.*)}`, 'g');
 
   const matches = [];
-  while((mediaMatches = mediaRegExp.exec(code)) !== null) {
+  do {
+    mediaMatches = mediaRegExp.exec(code);
     if (mediaMatches && mediaMatches.length >= 2) matches.push(mediaMatches[1]);
-  }
+  } while (mediaMatches);
 
   return matches.join();
 };
