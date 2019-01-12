@@ -82,7 +82,7 @@
     "jest": "^23.6.0",
     "jest-diff": "^23.6.0",
     "jest-snapshot": "^23.6.0",
-    "jsdom": "10.1.0",
+    "jsdom": "13.1.0",
     "nyc": "10.3.0",
     "prettier": "1.2.2",
     "prettier-eslint": "6.1.2",
