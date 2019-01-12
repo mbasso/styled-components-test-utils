@@ -6,7 +6,6 @@ import ReactTestRenderer from 'react-test-renderer';
 import styled from 'styled-components';
 import mediaQuery from 'css-mediaquery';
 import getCSS from '../utils/getCSS';
-import getCodeBlock from '../utils/getCodeBlock';
 
 const findClassName = (received) => {
   let className = '';
@@ -62,11 +61,17 @@ const getCodeInMedia = (code, media) => {
   const newMedia = media.replace(/\(/g, '\\(')
     .replace(/\)/g, '\\)')
     .replace(/\s/g, '\\s*');
-  const mediaMatches = new RegExp(`@media\\s*${newMedia}\\s*{(.*)`).exec(code);
-  const trailingCode = mediaMatches && mediaMatches[0];
-  if (!trailingCode) return '';
 
-  return getCodeBlock(trailingCode);
+  let mediaMatches;
+  const mediaRegExp = new RegExp(`@media\\s*${newMedia}\\s*{(.*)}`, 'g');
+
+  const matches = [];
+  do {
+    mediaMatches = mediaRegExp.exec(code);
+    if (mediaMatches && mediaMatches.length >= 2) matches.push(mediaMatches[1]);
+  } while (mediaMatches);
+
+  return matches.join();
 };
 
 const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

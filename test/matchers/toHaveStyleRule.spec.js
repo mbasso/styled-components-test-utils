@@ -42,6 +42,12 @@ const Button = styled.button`
       color: purple;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    &:active {
+      color: red;
+    }
+  }
 `;
 
 const ButtonWithSpaces = styled.button`
@@ -301,6 +307,18 @@ describe('toHaveStyleRule', () => {
     expect(result.message).toEqual(getMessage({
       expected: 'purple',
       received: 'purple',
+      selector: 'color',
+    }));
+    expect(result.pass).toBeTruthy();
+
+    result = toHaveStyleRule({
+      component,
+      modifier: '&:active',
+      media: 'screen and (max-width: 600px)',
+    }, 'color', 'red');
+    expect(result.message).toEqual(getMessage({
+      expected: 'red',
+      received: 'red',
       selector: 'color',
     }));
     expect(result.pass).toBeTruthy();
