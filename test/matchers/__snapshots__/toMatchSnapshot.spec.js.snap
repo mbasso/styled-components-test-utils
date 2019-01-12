@@ -1,39 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`any component - react-test-renderer 1`] = `
+exports[`toMatchSnapshot any component: any component - mount 1`] = `
 .c0 {
   color: palevioletred;
   font-weight: bold;
 }
 
-<div>
-  <a
-    className={undefined}
-  >
-    Unstyled, boring Link
-  </a>
+<Fragment>
+  <Link>
+    <a>
+      Unstyled, boring Link
+    </a>
+  </Link>
   <br />
-  <a
+  .c0 {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+<Styled(Link)>
+    .c0 {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+<StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bxivhb",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+      color: palevioletred;
+      font-weight: bold;
+    ",
+            ],
+          },
+          "displayName": "Styled(Link)",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bxivhb",
+          "target": [Function],
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+          Symbol(Symbol.hasInstance): [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      .c0 {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+<Link
+        className="c0"
+      >
+        .c0 {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+<a
+          className="c0"
+        >
+          Styled, exciting Link
+        </a>
+      </Link>
+    </StyledComponent>
+  </Styled(Link)>
+</Fragment>
+`;
+
+exports[`toMatchSnapshot any component: any component - react-test-renderer 1`] = `
+Array [
+  <a>
+    Unstyled, boring Link
+  </a>,
+  <br />,
+  .c0 {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+<a
     className="c0"
   >
     Styled, exciting Link
-  </a>
-</div>
+  </a>,
+]
 `;
 
-exports[`any component - shallow 1`] = `
-<div>
+exports[`toMatchSnapshot any component: any component - react-test-renderer shallow 1`] = `
+Array [
   <Link>
     Unstyled, boring Link
-  </Link>
-  <br />
-  <.sc-bxivhb>
+  </Link>,
+  <br />,
+  <ForwardRef>
     Styled, exciting Link
-  </.sc-bxivhb>
-</div>
+  </ForwardRef>,
+]
 `;
 
-exports[`attaching additional props - react-test-renderer 1`] = `
+exports[`toMatchSnapshot any component: any component - react-testing-library 1`] = `
+<a>
+  Unstyled, boring Link
+</a>
+`;
+
+exports[`toMatchSnapshot any component: any component - shallow 1`] = `
+Array [
+  <Link>
+    Unstyled, boring Link
+  </Link>,
+  <br />,
+  <Styled(Link)>
+    Styled, exciting Link
+  </Styled(Link)>,
+]
+`;
+
+exports[`toMatchSnapshot attaching additional props: attaching additional props - mount 1`] = `
+.c0 {
+  color: red;
+}
+
+<styled.div>
+  .c0 {
+  color: red;
+}
+
+<StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [
+          Object {
+            "className": "div",
+          },
+        ],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bZQynM",
+          "isStatic": true,
+          "lastClassName": "c0",
+          "rules": Array [
+            "
+      color: red;
+    ",
+          ],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bZQynM",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    .c0 {
+  color: red;
+}
+
+<div
+      className="c0"
+    />
+  </StyledComponent>
+</styled.div>
+`;
+
+exports[`toMatchSnapshot attaching additional props: attaching additional props - react-test-renderer 1`] = `
 .c0 {
   color: red;
 }
@@ -43,7 +188,7 @@ exports[`attaching additional props - react-test-renderer 1`] = `
 />
 `;
 
-exports[`attaching additional props - shallow 1`] = `
+exports[`toMatchSnapshot attaching additional props: attaching additional props - react-test-renderer shallow 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
@@ -56,11 +201,11 @@ exports[`attaching additional props - shallow 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "sc-bZQynM",
         "isStatic": true,
-        "lastClassName": "hgXmev",
+        "lastClassName": "biHjRQ",
         "rules": Array [
           "
-        color: red;
-      ",
+      color: red;
+    ",
         ],
       },
       "displayName": "styled.div",
@@ -77,7 +222,173 @@ exports[`attaching additional props - shallow 1`] = `
 />
 `;
 
-exports[`basic - react-test-renderer 1`] = `
+exports[`toMatchSnapshot attaching additional props: attaching additional props - react-testing-library 1`] = `
+<div
+  class="sc-bZQynM div biHjRQ"
+/>
+`;
+
+exports[`toMatchSnapshot attaching additional props: attaching additional props - shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [
+        Object {
+          "className": "div",
+        },
+      ],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bZQynM",
+        "isStatic": true,
+        "lastClassName": "biHjRQ",
+        "rules": Array [
+          "
+      color: red;
+    ",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bZQynM",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;
+
+exports[`toMatchSnapshot basic: basic - mount 1`] = `
+.c0 {
+  padding: 4em;
+  background: papayawhip;
+}
+
+.c1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<styled.section>
+  .c0 {
+  padding: 4em;
+  background: papayawhip;
+}
+
+.c1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bwzfXH",
+          "isStatic": true,
+          "lastClassName": "c0",
+          "rules": Array [
+            "
+      padding: 4em;
+      background: papayawhip;
+    ",
+          ],
+        },
+        "displayName": "styled.section",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bwzfXH",
+        "target": "section",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    .c0 {
+  padding: 4em;
+  background: papayawhip;
+}
+
+.c1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<section
+      className="c0"
+    >
+      .c0 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<styled.h1>
+        .c0 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-htpNat",
+                "isStatic": true,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+      font-size: 1.5em;
+      text-align: center;
+      color: palevioletred;
+    ",
+                ],
+              },
+              "displayName": "styled.h1",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-htpNat",
+              "target": "h1",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          .c0 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<h1
+            className="c0"
+          >
+            Hello World, this is my first styled component!
+          </h1>
+        </StyledComponent>
+      </styled.h1>
+    </section>
+  </StyledComponent>
+</styled.section>
+`;
+
+exports[`toMatchSnapshot basic: basic - react-test-renderer 1`] = `
 .c0 {
   padding: 4em;
   background: papayawhip;
@@ -92,15 +403,21 @@ exports[`basic - react-test-renderer 1`] = `
 <section
   className="c0"
 >
-  <h1
-    className="c1"
+  .c0 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+<h1
+    className="c0"
   >
     Hello World, this is my first styled component!
   </h1>
 </section>
 `;
 
-exports[`basic - shallow 1`] = `
+exports[`toMatchSnapshot basic: basic - react-test-renderer shallow 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
@@ -109,12 +426,12 @@ exports[`basic - shallow 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "sc-bwzfXH",
         "isStatic": true,
-        "lastClassName": "kpuTtG",
+        "lastClassName": "bCcIlh",
         "rules": Array [
           "
-        padding: 4em;
-        background: papayawhip;
-      ",
+      padding: 4em;
+      background: papayawhip;
+    ",
         ],
       },
       "displayName": "styled.section",
@@ -129,19 +446,98 @@ exports[`basic - shallow 1`] = `
   }
   forwardedRef={null}
 >
-  <.sc-htpNat>
+  <ForwardRef>
     Hello World, this is my first styled component!
-  </.sc-htpNat>
+  </ForwardRef>
 </StyledComponent>
 `;
 
-exports[`empty style - react-test-renderer 1`] = `
+exports[`toMatchSnapshot basic: basic - react-testing-library 1`] = `
+<section
+  class="sc-bwzfXH bCcIlh"
+>
+  <h1
+    class="sc-htpNat eBTJGM"
+  >
+    Hello World, this is my first styled component!
+  </h1>
+</section>
+`;
+
+exports[`toMatchSnapshot basic: basic - shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bwzfXH",
+        "isStatic": true,
+        "lastClassName": "bCcIlh",
+        "rules": Array [
+          "
+      padding: 4em;
+      background: papayawhip;
+    ",
+        ],
+      },
+      "displayName": "styled.section",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bwzfXH",
+      "target": "section",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <styled.h1>
+    Hello World, this is my first styled component!
+  </styled.h1>
+</StyledComponent>
+`;
+
+exports[`toMatchSnapshot empty style: empty style - mount 1`] = `
+<styled.div>
+  <StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": true,
+          "lastClassName": "bDWFJH",
+          "rules": Array [],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <div
+      className=""
+    />
+  </StyledComponent>
+</styled.div>
+`;
+
+exports[`toMatchSnapshot empty style: empty style - react-test-renderer 1`] = `
 <div
   className=""
 />
 `;
 
-exports[`empty style - shallow 1`] = `
+exports[`toMatchSnapshot empty style: empty style - react-test-renderer shallow 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
@@ -167,7 +563,39 @@ exports[`empty style - shallow 1`] = `
 />
 `;
 
-exports[`extending styles - react-test-renderer 1`] = `
+exports[`toMatchSnapshot empty style: empty style - react-testing-library 1`] = `
+<div
+  class="sc-bdVaJa bDWFJH"
+/>
+`;
+
+exports[`toMatchSnapshot empty style: empty style - shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "lastClassName": "bDWFJH",
+        "rules": Array [],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;
+
+exports[`toMatchSnapshot extending styles: extending styles - mount 1`] = `
 .c0 {
   color: palevioletred;
   font-size: 1em;
@@ -188,40 +616,570 @@ exports[`extending styles - react-test-renderer 1`] = `
   border-color: tomato;
 }
 
-<div>
-  <button
+<Fragment>
+  .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+<styled.button>
+    .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+<StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-ifAKCX",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+      color: palevioletred;
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border: 2px solid palevioletred;
+      border-radius: 3px;
+    ",
+            ],
+          },
+          "displayName": "styled.button",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-ifAKCX",
+          "target": "button",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+<button
+        className="c0"
+      >
+        Normal Button
+      </button>
+    </StyledComponent>
+  </styled.button>
+  .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  color: tomato;
+  border-color: tomato;
+}
+
+<Styled(styled.button)>
+    .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  color: tomato;
+  border-color: tomato;
+}
+
+<StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-EHOje",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+      color: palevioletred;
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border: 2px solid palevioletred;
+      border-radius: 3px;
+    ",
+              "
+      color: tomato;
+      border-color: tomato;
+    ",
+            ],
+          },
+          "displayName": "Styled(styled.button)",
+          "foldedComponentIds": Array [
+            "sc-ifAKCX",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-EHOje",
+          "target": "button",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  color: tomato;
+  border-color: tomato;
+}
+
+<button
+        className="c0"
+      >
+        Tomato Button
+      </button>
+    </StyledComponent>
+  </Styled(styled.button)>
+</Fragment>
+`;
+
+exports[`toMatchSnapshot extending styles: extending styles - react-test-renderer 1`] = `
+Array [
+  .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+}
+
+<button
     className="c0"
   >
     Normal Button
-  </button>
-  <button
-    className="c1"
+  </button>,
+  .c0 {
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  color: tomato;
+  border-color: tomato;
+}
+
+<button
+    className="c0"
   >
     Tomato Button
-  </button>
-</div>
+  </button>,
+]
 `;
 
-exports[`extending styles - shallow 1`] = `
-<div>
-  <.sc-ifAKCX>
+exports[`toMatchSnapshot extending styles: extending styles - react-test-renderer shallow 1`] = `
+Array [
+  <ForwardRef>
     Normal Button
-  </.sc-ifAKCX>
-  <.sc-EHOje>
+  </ForwardRef>,
+  <ForwardRef>
     Tomato Button
-  </.sc-EHOje>
-</div>
+  </ForwardRef>,
+]
 `;
 
-exports[`non-styled - mount 1`] = `<div />`;
+exports[`toMatchSnapshot extending styles: extending styles - react-testing-library 1`] = `
+<button
+  class="sc-ifAKCX hdpUkx"
+>
+  Normal Button
+</button>
+`;
 
-exports[`non-styled - react-test-renderer 1`] = `<div />`;
+exports[`toMatchSnapshot extending styles: extending styles - shallow 1`] = `
+Array [
+  <styled.button>
+    Normal Button
+  </styled.button>,
+  <Styled(styled.button)>
+    Tomato Button
+  </Styled(styled.button)>,
+]
+`;
 
-exports[`non-styled - shallow 1`] = `<div />`;
+exports[`toMatchSnapshot non-styled: non-styled - mount 1`] = `<div />`;
 
-exports[`null 1`] = `null`;
+exports[`toMatchSnapshot non-styled: non-styled - react-test-renderer 1`] = `<div />`;
 
-exports[`referring to other components - react-test-renderer 1`] = `
+exports[`toMatchSnapshot non-styled: non-styled - react-testing-library 1`] = `<div />`;
+
+exports[`toMatchSnapshot non-styled: non-styled - shallow 1`] = `<div />`;
+
+exports[`toMatchSnapshot null: null - react-test-renderer 1`] = `null`;
+
+exports[`toMatchSnapshot null: null - react-testing-library 1`] = `null`;
+
+exports[`toMatchSnapshot referring to other components: referring to other components - mount 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  background: papayawhip;
+  color: palevioletred;
+}
+
+.c2 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c2 {
+  fill: rebeccapurple;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c3::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<styled.a
+  href="#"
+>
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  background: papayawhip;
+  color: palevioletred;
+}
+
+.c2 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c2 {
+  fill: rebeccapurple;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c3::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "c0",
+          "isStatic": true,
+          "lastClassName": "c1",
+          "rules": Array [
+            "
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      background: papayawhip;
+      color: palevioletred;
+    ",
+          ],
+        },
+        "displayName": "styled.a",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "c0",
+        "target": "a",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+    href="#"
+  >
+    .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  background: papayawhip;
+  color: palevioletred;
+}
+
+.c2 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c2 {
+  fill: rebeccapurple;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c3::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<a
+      className="c0 c1"
+      href="#"
+    >
+      .c0 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c0 {
+  fill: rebeccapurple;
+}
+
+<styled.svg>
+        .c0 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c0 {
+  fill: rebeccapurple;
+}
+
+<StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-iwsKbI",
+                "isStatic": true,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+      transition: fill 0.25s;
+      width: 48px;
+      height: 48px;
+      ",
+                  ".c0",
+                  ":hover & {
+        fill: rebeccapurple;
+      }
+    ",
+                ],
+              },
+              "displayName": "styled.svg",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-iwsKbI",
+              "target": "svg",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          .c0 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c0 {
+  fill: rebeccapurple;
+}
+
+<svg
+            className="c0"
+          />
+        </StyledComponent>
+      </styled.svg>
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c0::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<styled.span>
+        .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c0::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-gZMcBi",
+                "isStatic": true,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+      display: flex;
+      align-items: center;
+      line-height: 1.2;
+      &::before {
+        content: '◀';
+        margin: 0 10px;
+      }
+    ",
+                ],
+              },
+              "displayName": "styled.span",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-gZMcBi",
+              "target": "span",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c0::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<span
+            className="c0"
+          >
+            Hovering my parent changes my style!
+          </span>
+        </StyledComponent>
+      </styled.span>
+    </a>
+  </StyledComponent>
+</styled.a>
+`;
+
+exports[`toMatchSnapshot referring to other components: referring to other components - react-test-renderer 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -268,18 +1226,282 @@ exports[`referring to other components - react-test-renderer 1`] = `
   className="c0 c1"
   href="#"
 >
-  <svg
-    className="c2"
+  .c0 {
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s;
+  width: 48px;
+  height: 48px;
+}
+
+.c0:hover .c0 {
+  fill: rebeccapurple;
+}
+
+<svg
+    className="c0"
   />
-  <span
-    className="c3"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.c0::before {
+  content: '◀';
+  margin: 0 10px;
+}
+
+<span
+    className="c0"
   >
     Hovering my parent changes my style!
   </span>
 </a>
 `;
 
-exports[`supported css - react-test-renderer 1`] = `
+exports[`toMatchSnapshot referring to other components: referring to other components - react-test-renderer shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-dnqmqq",
+        "isStatic": true,
+        "lastClassName": "bxQvkc",
+        "rules": Array [
+          "
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      background: papayawhip;
+      color: palevioletred;
+    ",
+        ],
+      },
+      "displayName": "styled.a",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-dnqmqq",
+      "target": "a",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  href="#"
+>
+  <ForwardRef />
+  <ForwardRef>
+    Hovering my parent changes my style!
+  </ForwardRef>
+</StyledComponent>
+`;
+
+exports[`toMatchSnapshot referring to other components: referring to other components - react-testing-library 1`] = `
+<a
+  class="sc-dnqmqq bxQvkc"
+  href="#"
+>
+  <svg
+    class="sc-iwsKbI hVheYY"
+  />
+  <span
+    class="sc-gZMcBi dgDxnx"
+  >
+    Hovering my parent changes my style!
+  </span>
+</a>
+`;
+
+exports[`toMatchSnapshot referring to other components: referring to other components - shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-dnqmqq",
+        "isStatic": true,
+        "lastClassName": "bxQvkc",
+        "rules": Array [
+          "
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      background: papayawhip;
+      color: palevioletred;
+    ",
+        ],
+      },
+      "displayName": "styled.a",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-dnqmqq",
+      "target": "a",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  href="#"
+>
+  <styled.svg />
+  <styled.span>
+    Hovering my parent changes my style!
+  </styled.span>
+</StyledComponent>
+`;
+
+exports[`toMatchSnapshot supported css: supported css - mount 1`] = `
+.c0 {
+  padding: 2em 1em;
+  background: papayawhip;
+}
+
+.c0:hover {
+  background: palevioletred;
+}
+
+.c0 > p {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+html.test .c0 {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    background: tomato;
+  }
+
+  .c0:hover {
+    background: yellow;
+  }
+}
+
+<styled.div>
+  .c0 {
+  padding: 2em 1em;
+  background: papayawhip;
+}
+
+.c0:hover {
+  background: palevioletred;
+}
+
+.c0 > p {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+html.test .c0 {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    background: tomato;
+  }
+
+  .c0:hover {
+    background: yellow;
+  }
+}
+
+<StyledComponent
+    forwardedComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-htoDjs",
+          "isStatic": true,
+          "lastClassName": "c0",
+          "rules": Array [
+            "
+      padding: 2em 1em;
+      background: papayawhip;
+      &:hover {
+        background: palevioletred;
+      }
+      @media (max-width: 600px) {
+        background: tomato;
+        &:hover {
+          background: yellow;
+        }
+      }
+      > p {
+        text-decoration: underline;
+      }
+      html.test & {
+        display: none;
+      }
+    ",
+          ],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-htoDjs",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    .c0 {
+  padding: 2em 1em;
+  background: papayawhip;
+}
+
+.c0:hover {
+  background: palevioletred;
+}
+
+.c0 > p {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+html.test .c0 {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    background: tomato;
+  }
+
+  .c0:hover {
+    background: yellow;
+  }
+}
+
+<div
+      className="c0"
+    >
+      <p>
+        Hello World!
+      </p>
+    </div>
+  </StyledComponent>
+</styled.div>
+`;
+
+exports[`toMatchSnapshot supported css: supported css - react-test-renderer 1`] = `
 .c0 {
   padding: 2em 1em;
   background: papayawhip;
@@ -317,7 +1539,7 @@ html.test .c0 {
 </div>
 `;
 
-exports[`supported css - shallow 1`] = `
+exports[`toMatchSnapshot supported css: supported css - react-test-renderer shallow 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
@@ -326,27 +1548,27 @@ exports[`supported css - shallow 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "sc-htoDjs",
         "isStatic": true,
-        "lastClassName": "eIFaJq",
+        "lastClassName": "ddvQnT",
         "rules": Array [
           "
-        padding: 2em 1em;
-        background: papayawhip;
+      padding: 2em 1em;
+      background: papayawhip;
+      &:hover {
+        background: palevioletred;
+      }
+      @media (max-width: 600px) {
+        background: tomato;
         &:hover {
-          background: palevioletred;
+          background: yellow;
         }
-        @media (max-width: 600px) {
-          background: tomato;
-          &:hover {
-            background: yellow;
-          }
-        }
-        > p {
-          text-decoration: underline;
-        }
-        html.test & {
-          display: none;
-        }
-      ",
+      }
+      > p {
+        text-decoration: underline;
+      }
+      html.test & {
+        display: none;
+      }
+    ",
         ],
       },
       "displayName": "styled.div",
@@ -367,7 +1589,67 @@ exports[`supported css - shallow 1`] = `
 </StyledComponent>
 `;
 
-exports[`theming - react-test-renderer 1`] = `
+exports[`toMatchSnapshot supported css: supported css - react-testing-library 1`] = `
+<div
+  class="sc-htoDjs ddvQnT"
+>
+  <p>
+    Hello World!
+  </p>
+</div>
+`;
+
+exports[`toMatchSnapshot supported css: supported css - shallow 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-htoDjs",
+        "isStatic": true,
+        "lastClassName": "ddvQnT",
+        "rules": Array [
+          "
+      padding: 2em 1em;
+      background: papayawhip;
+      &:hover {
+        background: palevioletred;
+      }
+      @media (max-width: 600px) {
+        background: tomato;
+        &:hover {
+          background: yellow;
+        }
+      }
+      > p {
+        text-decoration: underline;
+      }
+      html.test & {
+        display: none;
+      }
+    ",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-htoDjs",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  <p>
+    Hello World!
+  </p>
+</StyledComponent>
+`;
+
+exports[`toMatchSnapshot theming: theming - mount 1`] = `
 .c0 {
   font-size: 1em;
   margin: 1em;
@@ -386,23 +1668,237 @@ exports[`theming - react-test-renderer 1`] = `
   border: 2px solid mediumseagreen;
 }
 
-<div>
-  <button
+<Fragment>
+  .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+<styled.button
+    theme={
+      Object {
+        "main": "palevioletred",
+      }
+    }
+  >
+    .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+<StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-gzVnrw",
+            "isStatic": false,
+            "lastClassName": "c1",
+            "rules": Array [
+              "
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border-radius: 3px;
+      color: ",
+              [Function],
+              ";
+      border: 2px solid ",
+              [Function],
+              ";
+    ",
+            ],
+          },
+          "defaultProps": Object {
+            "theme": Object {
+              "main": "palevioletred",
+            },
+          },
+          "displayName": "styled.button",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-gzVnrw",
+          "target": "button",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      theme={
+        Object {
+          "main": "palevioletred",
+        }
+      }
+    >
+      .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+<button
+        className="c0"
+      >
+        Normal
+      </button>
+    </StyledComponent>
+  </styled.button>
+  .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+}
+
+<ThemeProvider
+    theme={
+      Object {
+        "main": "mediumseagreen",
+      }
+    }
+  >
+    .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+}
+
+<styled.button
+      theme={
+        Object {
+          "main": "palevioletred",
+        }
+      }
+    >
+      .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+}
+
+<StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gzVnrw",
+              "isStatic": false,
+              "lastClassName": "c0",
+              "rules": Array [
+                "
+      font-size: 1em;
+      margin: 1em;
+      padding: 0.25em 1em;
+      border-radius: 3px;
+      color: ",
+                [Function],
+                ";
+      border: 2px solid ",
+                [Function],
+                ";
+    ",
+              ],
+            },
+            "defaultProps": Object {
+              "theme": Object {
+                "main": "palevioletred",
+              },
+            },
+            "displayName": "styled.button",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gzVnrw",
+            "target": "button",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        theme={
+          Object {
+            "main": "palevioletred",
+          }
+        }
+      >
+        .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+}
+
+<button
+          className="c0"
+        >
+          Themed
+        </button>
+      </StyledComponent>
+    </styled.button>
+  </ThemeProvider>
+</Fragment>
+`;
+
+exports[`toMatchSnapshot theming: theming - react-test-renderer 1`] = `
+Array [
+  .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+<button
     className="c0"
   >
     Normal
-  </button>
-  <button
-    className="c1"
+  </button>,
+  .c0 {
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+}
+
+<button
+    className="c0"
   >
     Themed
-  </button>
-</div>
+  </button>,
+]
 `;
 
-exports[`theming - shallow 1`] = `
-<div>
-  <.sc-gzVnrw
+exports[`toMatchSnapshot theming: theming - react-test-renderer shallow 1`] = `
+Array [
+  <ForwardRef
     theme={
       Object {
         "main": "palevioletred",
@@ -410,7 +1906,7 @@ exports[`theming - shallow 1`] = `
     }
   >
     Normal
-  </.sc-gzVnrw>
+  </ForwardRef>,
   <ThemeProvider
     theme={
       Object {
@@ -418,7 +1914,7 @@ exports[`theming - shallow 1`] = `
       }
     }
   >
-    <.sc-gzVnrw
+    <ForwardRef
       theme={
         Object {
           "main": "palevioletred",
@@ -426,7 +1922,46 @@ exports[`theming - shallow 1`] = `
       }
     >
       Themed
-    </.sc-gzVnrw>
-  </ThemeProvider>
-</div>
+    </ForwardRef>
+  </ThemeProvider>,
+]
+`;
+
+exports[`toMatchSnapshot theming: theming - react-testing-library 1`] = `
+<button
+  class="sc-gzVnrw kqYZEk"
+>
+  Normal
+</button>
+`;
+
+exports[`toMatchSnapshot theming: theming - shallow 1`] = `
+Array [
+  <styled.button
+    theme={
+      Object {
+        "main": "palevioletred",
+      }
+    }
+  >
+    Normal
+  </styled.button>,
+  <ThemeProvider
+    theme={
+      Object {
+        "main": "mediumseagreen",
+      }
+    }
+  >
+    <styled.button
+      theme={
+        Object {
+          "main": "palevioletred",
+        }
+      }
+    >
+      Themed
+    </styled.button>
+  </ThemeProvider>,
+]
 `;
