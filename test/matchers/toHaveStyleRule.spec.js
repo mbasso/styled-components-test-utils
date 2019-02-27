@@ -41,6 +41,10 @@ const Button = styled.button`
     &:hover {
       color: purple;
     }
+
+    > *:not(:first-child) {
+      margin-left: 12px;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -332,6 +336,21 @@ describe('toHaveStyleRule', () => {
       expected: 'pink',
       received: 'pink',
       selector: 'color',
+    }));
+    expect(result.pass).toBeTruthy();
+
+    result = toHaveStyleRule({
+      component,
+      modifier: '> *:not(:first-child)',
+      media: {
+        type: 'screen',
+        width: '400px',
+      },
+    }, 'margin-left', '12px');
+    expect(result.message).toEqual(getMessage({
+      expected: '12px',
+      received: '12px',
+      selector: 'margin-left',
     }));
     expect(result.pass).toBeTruthy();
   });

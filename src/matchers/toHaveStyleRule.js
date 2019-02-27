@@ -137,7 +137,7 @@ const toHaveStyleRule = (received, selector, expected) => {
       .map(x => getStyleRule(x, className, selector));
 
     const mediaMatches = values.length;
-    const classMatches = code.match(new RegExp(className, 'g'));
+    const classMatches = code.match(new RegExp(escapeRegExp(className), 'g'));
 
     if (mediaMatches < classMatches.length - 1) {
       // has a rule outside media (first match)
