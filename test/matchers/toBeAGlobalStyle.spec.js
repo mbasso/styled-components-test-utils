@@ -1,14 +1,7 @@
-import { injectGlobal } from 'styled-components';
 import chalk from 'chalk';
 import '../../src/jest';
+import { GlobalStyle } from '../utils/framework';
 import toBeAGlobalStyle from '../../src/matchers/toBeAGlobalStyle';
-
-// eslint-disable-next-line
-injectGlobal`
-  body {
-    font-family: 'Roboto';
-  }
-`;
 
 describe('toBeAGlobalStyle', () => {
   const style = `
@@ -20,7 +13,7 @@ describe('toBeAGlobalStyle', () => {
   const getMessage = value => `Expected global styles to contain:\n\t${chalk.red(value)}`;
 
   test('should pass', () => {
-    const result = toBeAGlobalStyle(style);
+    const result = toBeAGlobalStyle(style, GlobalStyle);
     expect(result.message).toEqual(getMessage(style));
     expect(result.pass).toBeTruthy();
   });
@@ -31,7 +24,7 @@ describe('toBeAGlobalStyle', () => {
           font-family: 'Roboto';
         }
     `;
-    const result = toBeAGlobalStyle(received);
+    const result = toBeAGlobalStyle(received, GlobalStyle);
     expect(result.message).toEqual(getMessage(received));
     expect(result.pass).toBeTruthy();
   });
@@ -43,7 +36,7 @@ describe('toBeAGlobalStyle', () => {
       }
     `;
 
-    const result = toBeAGlobalStyle(received);
+    const result = toBeAGlobalStyle(received, GlobalStyle);
     expect(result.message).toEqual(getMessage(received));
     expect(result.pass).toBeFalsy();
   });

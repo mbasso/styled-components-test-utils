@@ -244,7 +244,7 @@ describe('toHaveStyleRule', () => {
   }); */
 
   test('should work with extend api', () => {
-    const ExtendedButton = Button.extend`
+    const ExtendedButton = styled(Button)`
       color: green;
     `;
     const component = ReactTestRenderer.create(<ExtendedButton />);

@@ -7,6 +7,13 @@
 
 > Test utils for styled-components compatible with jest, expect, chai and jasmine
 
+- - -
+
+**:warning: Attention :warning: - if you want to use this library with styled-components v2 or v3, please install the 1.x.x version, defined in [this](https://github.com/mbasso/styled-components-test-utils/tree/v1) branch**
+
+- - -
+
+
 ## Table of Contents
 
 - [Motivation](#motivation)
@@ -19,7 +26,6 @@
 	- [toHaveStyleRule](#tohavestylerule)
 	- [toNotHaveStyleRule](#tonothavestylerule)
 	- [toHaveKeyframeRule](#tohavekeyframerule)
-	- [toHaveComponent](#tohavecomponent)
 	- [toBeAGlobalStyle](#tobeaglobalstyle)
 	- [toMatchSnapshot](#tomatchsnapshot)
 - [Change Log](#change-log)
@@ -205,41 +211,31 @@ expect(fadeIn).toHaveKeyframeRule('0%', 'opacity', '0');
 expect(fadeIn).toHaveKeyframeRule('100%', 'opacity', '1');
 ```
 
-### toHaveComponent
-> expect(styledComponent).toHaveComponent(component)
-
-Asserts that `styledComponent` has component `component`.
-
-```js
-import Foo from './Foo';
-
-const Button = styled.button``;
-expect(Button).toHaveComponent('button');
-
-const Bar = Button.withComponent(Foo);
-expect(Bar).toHaveComponent(Foo);
-```
-
-
 ### toBeAGlobalStyle
-> expect(style).toBeAGlobalStyle()
+> expect(style).toBeAGlobalStyle(Component)
 
-Asserts that `style` is a global style.
+Asserts that `style` is a global style after mounting the given `Component`.
 
 ```js
-import fontFamily from './fontFamily';
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-injectGlobal`
-  input {
-    font-family: ${fontFamily};
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    font-family: ${props => props.theme.fontFamily};
   }
 `;
 
 expect(`
-  input {
-    font-family: Roboto;
+  body {
+    color: white;
+    font-family: Helvetica Neue;
   }
-`).toBeAGlobalStyle();
+`).toBeAGlobalStyle(() => (
+  <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
+    <GlobalStyle whiteColor />
+  </ThemeProvider>
+));
 ```
 
 ### toMatchSnapshot

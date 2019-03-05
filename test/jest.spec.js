@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
 import '../src/jest';
-import { Button, fadeIn } from './utils/framework';
+import { Button, fadeIn, GlobalStyle } from './utils/framework';
 
 describe('jest', () => {
   test('toHaveStyleRule', () => {
@@ -15,11 +15,7 @@ describe('jest', () => {
   });
 
   test('toBeAGlobalStyle', () => {
-    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
-  });
-
-  test('toHaveComponent', () => {
-    expect(Button).toHaveComponent('button');
+    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle(GlobalStyle);
   });
 
   it('toHaveKeyframeRule', () => {

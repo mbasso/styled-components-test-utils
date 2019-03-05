@@ -1,7 +1,6 @@
-import styled, { injectGlobal, keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 
-// eslint-disable-next-line
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto';
   }

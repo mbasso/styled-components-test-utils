@@ -56,7 +56,7 @@ describe('toHaveKeyframeRule', () => {
   });
 
   test('should fail if keyframed doesn\'t exist', () => {
-    const result = toHaveKeyframeRule('foo', '75%', 'top', '0');
+    const result = toHaveKeyframeRule({ getName: () => 'foo' }, '75%', 'top', '0');
     expect(result.message).toEqual(`Property not found: ${chalk.red('75%')} ${chalk.red('top')}`);
     expect(result.pass).toBeFalsy();
   });

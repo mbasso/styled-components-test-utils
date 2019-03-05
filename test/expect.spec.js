@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import ReactTestRenderer from 'react-test-renderer';
 import injectStyledUtils from '../src/expect';
-import { Button, fadeIn } from './utils/framework';
+import { Button, fadeIn, GlobalStyle } from './utils/framework';
 
 injectStyledUtils(expect);
 
@@ -18,11 +18,7 @@ describe('expect', () => {
   });
 
   test('toBeAGlobalStyle', () => {
-    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
-  });
-
-  it('toHaveComponent', () => {
-    expect(Button).toHaveComponent('button');
+    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle(GlobalStyle);
   });
 
   it('toHaveKeyframeRule', () => {

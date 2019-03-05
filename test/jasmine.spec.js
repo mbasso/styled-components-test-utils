@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
 import { JSDOM } from 'jsdom';
-import injectStyledUtils from '../src/jasmine';
 
 const dom = new JSDOM('<!doctype html><html><body></body></html>');
 global.window = dom.window;
 global.document = dom.window.document;
+global.navigator = dom.window.navigator;
+global.HTMLElement = dom.window.HTMLElement;
 
-const { Button, fadeIn } = require('./utils/framework');
+const injectStyledUtils = require('../src/jasmine').default;
+const { Button, fadeIn, GlobalStyle } = require('./utils/framework');
 
 describe('jasmine', () => {
   beforeAll(() => {
@@ -25,11 +27,7 @@ describe('jasmine', () => {
   });
 
   it('toBeAGlobalStyle', () => {
-    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle();
-  });
-
-  it('toHaveComponent', () => {
-    expect(Button).toHaveComponent('button');
+    expect('body { font-family: \'Roboto\'; }').toBeAGlobalStyle(GlobalStyle);
   });
 
   it('toHaveKeyframeRule', () => {
