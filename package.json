@@ -92,7 +92,7 @@
     "rimraf": "2.6.1",
     "strip-ansi": "3.0.1",
     "styled-components": "3.2.5",
-    "webpack": "3.0.0"
+    "webpack": "5.94.0"
   },
   "dependencies": {
     "css": "^2.2.1",
